@@ -7,17 +7,17 @@ def Input():
     num = input('Masukkan angka dan pisahkan dengan koma : ')
     numList = num.split(',')
     for a in numList:
-        main.append(int(a))
+        main.append(a)
         if int(a) % 2 == 0:
-            genap.append(int(a))
+            genap.append(a)
         elif int(a) % 2 > 0:
-            ganjil.append(int(a))
+            ganjil.append(a)
 
 def Utama():
     if len(main) == 0:
         print('\n---ARRAY KOSONG---')
     else :
-        print('Isi Array Utama : \n\n{}\n'.format(main))
+        print('Isi Array Utama : ' + ','.join(main) + '\n')
 
 def GG():
     if len(main) == 0:
@@ -25,9 +25,9 @@ def GG():
     else :
         x = input('- Pilih 1 untuk lihat Array Ganjil\n- Pilih 2 untuk lihat Array Genap\n MASUKKAN PILIHAN : ')
         if x == '1':
-            print('Isi Array Ganjil : \n\n{}\n'.format(ganjil))
+            print('Isi Array Ganjil : '  + ','.join(ganjil) + '\n')
         elif x == '2':
-            print('Isi Array Genap : \n\n{}\n'.format(genap))
+            print('Isi Array Genap : '  + ','.join(genap) + '\n')
 
 def Sort():
     if len(main) == 0:
@@ -37,19 +37,19 @@ def Sort():
         if arr == 1:
             for a in range(len(main)-1):
                 for b in range(a+1, len(main)):
-                    hasil = main[a] - main[b]
+                    hasil = int(main[a]) - int(main[b])
                     if hasil > 0:
                         main[a],main[b] = main[b],main[a]
         elif arr == 2:
             for a in range(len(ganjil)-1):
                 for b in range(a+1, len(ganjil)):
-                    hasil = ganjil[a] - ganjil[b]
+                    hasil = int(ganjil[a]) - int(ganjil[b])
                     if hasil > 0:
                         ganjil[a],ganjil[b] = ganjil[b],ganjil[a]
         elif arr == 3:
             for a in range(len(genap)-1):
                 for b in range(a+1, len(genap)):
-                    hasil = genap[a] - genap[b]
+                    hasil = int(genap[a]) - int(genap[b])
                     if hasil > 0:
                         genap[a],genap[b] = genap[b],genap[a]
 
